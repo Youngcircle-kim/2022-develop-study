@@ -84,10 +84,12 @@ class Juso{
                             System.out.println(name + " 연락처가 삭제되었습니다.\n");
                             break;
                         } else {
-                            System.out.println("존재하지 않는 연락처입니다.\n");
-                            break;
+                            if(List.size()-1 == i){
+                                System.out.println("존재하지 않는 연락처입니다.\n");
+
+                            }
+
                         }
-                        
                     }
                     update(List, file);
                     break;
@@ -100,8 +102,11 @@ class Juso{
                     if(number.equals(List.get(j).getNumber())) {
                         List.remove(j);
                         System.out.println(number + " 연락처가 삭제되었습니다.");
+                        break;
                     } else {
-                        System.out.println("존재하지 않는 연락처입니다.");
+                        if(List.size()-1 == j){
+                            System.out.println("존재하지 않는 연락처입니다.");    
+                        }
                     }
                 }
                 update(List, file);
